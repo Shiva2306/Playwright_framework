@@ -7,7 +7,7 @@ test('TC_004_SearchProduct_Positive @sanity', async ({ page }) => {
 
     await page.goto(TestConfig.appUrl);
 
-    const homePage = new HomePage(page);
+    //const homePage = new HomePage(page);
 
     //  Search product from header
     const searchPage = new SearchPage(page);

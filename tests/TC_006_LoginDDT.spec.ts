@@ -16,7 +16,7 @@ const testData = DataProvider.getTestDataFromCsv(csvPath);
 
 for (const data of testData) {
 
-    test(`Login Test 2 with CSV Data: ${data.testName} @datadriven`, async ({ page }) => {
+    test(`Login Test with CSV Data: ${data.testName} @datadriven`, async ({ page }) => {
 
         await page.goto(TestConfig.appUrl);
 

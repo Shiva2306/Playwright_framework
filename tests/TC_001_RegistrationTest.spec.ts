@@ -6,7 +6,7 @@ import { RegistrationPage } from '../pages/RegistrationPage';
 import { RandomDataUtil } from '../utils/randomdatagenerator';
 import { TestConfig } from '../test.config';
 
-test('TC_001_RegistrationTest', async ({page})=>{   
+test('TC_001_RegistrationTest @sanity', async ({page})=>{   
 
     await page.goto(TestConfig.appUrl);
 

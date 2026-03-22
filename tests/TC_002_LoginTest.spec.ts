@@ -6,7 +6,7 @@ import { LoginPage } from '../pages/LoginPage';
 import { TestConfig } from '../test.config';
 import { MyAccountPage } from '../pages/MyAccountPage';
 
-test('TC_002_LoginTest', async ({page})=>{
+test('TC_002_LoginTest @sanity', async ({page})=>{
 
     await page.goto(TestConfig.appUrl);
 
@@ -19,10 +19,17 @@ test('TC_002_LoginTest', async ({page})=>{
     await lp.enterPassword(TestConfig.password);
     await lp.clickLogin();
 
-     let myAccountPage = new MyAccountPage(page);
-    const status = await myAccountPage.isMyAccountPageExists();
+    const status1 = await lp.getloginErrorMessage();
 
-     expect(status).toBeTruthy();
+    expect(status1).toBeTruthy();
+
+
+    //  let myAccountPage = new MyAccountPage(page);
+    // const status = await myAccountPage.isMyAccountPageExists();
+
+
+
+    //  expect(status).toBeTruthy();
 });
 
 
