@@ -1,0 +1,8 @@
+"DESCRIPTION","DURATION IN MS","NAME","PARENT SUITE","START TIME","STATUS","STOP TIME","SUB SUITE","SUITE","TEST CLASS","TEST METHOD"
+"","2540","TC_002_LoginTest","chromium","2026-03-21","failed","2026-03-21","Login Test Suite","TC_002_LoginTest.spec.ts","",""
+"","13949","TC_001_RegistrationTest","chromium","2026-03-22","passed","2026-03-22","","TC_001_RegistrationTest.spec.ts","",""
+"","7709","TC_002_LoginTest","chromium","2026-03-22","passed","2026-03-22","","TC_002_LoginTest.spec.ts","",""
+"","7162","Login Test with JSON Data: Invalid login @datadriven","chromium","2026-03-22","passed","2026-03-22","","TC_003_LoginDDT.spec.ts","",""
+"","1986","TC_004_SearchProduct_Positive @sanity","chromium","2026-03-22","passed","2026-03-22","","TC_004_SearchPositiveTest.spec.ts","",""
+"","11819","Login Test with JSON Data: Valid login @datadriven","chromium","2026-03-22","failed","2026-03-22","","TC_003_LoginDDT.spec.ts","",""
+"","1359","TC_005_SearchProduct_Negative @regression","chromium","2026-03-22","passed","2026-03-22","","TC_005_SearchNegativeTest.spec.ts","",""
