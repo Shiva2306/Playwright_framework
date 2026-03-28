@@ -1,39 +1,50 @@
-name: Playwright Tests
-on:
-  push:
-    branches: [master]
-  pull_request:
-    branches: [master]
-jobs:
-  test:
-    timeout-minutes: 60
-    runs-on: windows-latest
+pipeline {
+    agent any
 
-    
-    steps:
-    - name: Checkout Repository
-      uses: actions/checkout@v4
+    tools {
+        // This MUST match the name you added in Jenkins Global Tool Configuration
+        allure 'allure'
+    }
 
-    - name: Set up Node.js
-      uses: actions/setup-node@v4
-      with:
-        node-version: lts/*
-    
-    - name: Install dependencies
-      run: npm ci
+    stages {
 
-    - name: Install Playwright Browsers
-      run: npx playwright install --with-deps
+        stage('Checkout') {
+            steps {
+                git 'https://github.com/Shiva2306/Playwright_framework.git'
+            }
+        }
 
-    - name: Run Playwright tests
-      #run: npx playwright test
-      #run: npx playwright test --grep "@sanity"
-      run: npm run test:sanity
-    
-    - name: Upload Playwright HTML Report
-      if: always()
-      uses: actions/upload-artifact@v4
-      with:
-        name: playwright-report
-        path: playwright-report/
-        retention-days: 30
+        stage('Install Dependencies') {
+            steps {
+                bat 'npm install'
+                bat 'npx playwright install'
+            }
+        }
+
+        stage('Run Regression Tests') {
+            steps {
+                bat 'npx playwright test --grep @regression --headed --reporter=line,allure-playwright'
+            }
+        }
+
+        stage('Generate Allure Report') {
+            steps {
+                allure includeProperties: false,
+                       jdk: '',
+                       results: [[path: 'allure-results']]
+            }
+        }
+    }
+
+    post {
+        always {
+            echo 'Execution Completed'
+        }
+        success {
+            echo 'Tests Passed ✅'
+        }
+        failure {
+            echo 'Tests Failed ❌'
+        }
+    }
+}
