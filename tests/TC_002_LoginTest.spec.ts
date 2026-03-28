@@ -19,17 +19,17 @@ test('TC_002_LoginTest @sanity', async ({page})=>{
     await lp.enterPassword(TestConfig.password);
     await lp.clickLogin();
 
-    const status1 = await lp.getloginErrorMessage();
+    // const status1 = await lp.getloginErrorMessage();
 
-    expect(status1).toBeTruthy();
-
-
-    //  let myAccountPage = new MyAccountPage(page);
-    // const status = await myAccountPage.isMyAccountPageExists();
+    // expect(status1).toBeTruthy();
 
 
+     let myAccountPage = new MyAccountPage(page);
+    const status = await myAccountPage.isMyAccountPageExists();
 
-    //  expect(status).toBeTruthy();
+
+
+     expect(status).toBeTruthy();
 });
 
 
