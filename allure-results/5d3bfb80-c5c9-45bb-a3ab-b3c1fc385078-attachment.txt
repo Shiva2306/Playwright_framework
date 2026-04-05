@@ -1,0 +1,11 @@
+{
+  bookingid: 2377,
+  booking: {
+    firstname: 'Rudolph',
+    lastname: 'Lueilwitz',
+    totalprice: 2766,
+    depositpaid: false,
+    bookingdates: { checkin: '2026-04-05', checkout: '2026-04-10' },
+    additionalneeds: 'super bowls'
+  }
+}

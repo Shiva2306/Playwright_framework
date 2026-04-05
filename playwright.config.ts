@@ -17,14 +17,14 @@ export default defineConfig({
   ],
 
   use: {
-    trace: 'on-first-retry',
+    //trace: 'on-first-retry',
     screenshot: 'only-on-failure',
     video: 'retain-on-failure',
-    //headless: false,
-    viewport: { width: 1280, height: 720 }, // Set default viewport size for consistency
-    ignoreHTTPSErrors: true, // Ignore SSL errors if necessary
-    permissions: ['geolocation'], // Set necessary permissions for geolocation-based tests
-  },
+    baseURL: 'https://restful-booker.herokuapp.com'    //headless: false,
+  //   viewport: { width: 1280, height: 720 }, // Set default viewport size for consistency
+  //   ignoreHTTPSErrors: true, // Ignore SSL errors if necessary
+  //   permissions: ['geolocation'], // Set necessary permissions for geolocation-based tests
+   },
 
   //grep: /@master/,
 
@@ -43,6 +43,7 @@ export default defineConfig({
       use: { ...devices['Desktop Safari'] },
     }  */
   ],
+
 
 
 });

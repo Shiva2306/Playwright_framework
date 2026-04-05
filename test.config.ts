@@ -16,6 +16,8 @@ export class TestConfig{
    static email="qedge123@gmail.com"
    static password="qedge123@gmail.com"
 
+
+
    
 }
 

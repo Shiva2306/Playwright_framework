@@ -3,28 +3,28 @@
   "version": "1.0.0",
   "main": "index.js",
   "scripts": {
-
-    "test:master": "playwright test --grep @master", 
-    "test:sanity": "playwright test --grep @sanity", 
-    "test:regression": "playwright test --grep @regression --headed", 
-    "test:datadriven": "playwright test --grep @datadriven", 
-    "test:master:headed": "playwright test --grep @master --headed", 
-    "test:sanity:debug": "playwright test --grep @sanity --debug" 
-  
+    "test:master": "playwright test --grep @master",
+    "test:sanity": "playwright test --grep @sanity",
+    "test:regression": "playwright test --grep @regression --headed",
+    "test:datadriven": "playwright test --grep @datadriven",
+    "test:master:headed": "playwright test --grep @master --headed",
+    "test:sanity:debug": "playwright test --grep @sanity --debug"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
-  "type": "module",
+  "type": "commonjs",
   "description": "",
   "devDependencies": {
     "@playwright/test": "^1.58.2",
-    "@types/node": "^25.5.0",
+    "@types/luxon": "^3.7.1",
+    "@types/node": "^25.5.2",
     "allure-playwright": "^3.6.0"
   },
   "dependencies": {
     "@faker-js/faker": "^9.9.0",
     "csv-parse": "^6.2.1",
+    "luxon": "^3.7.2",
     "xlsx": "^0.18.5"
   }
 }
